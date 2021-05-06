@@ -44,12 +44,12 @@ for ($i = 0; $i < strlen($opcionb); $i++) {
 //opcion c
 for ($i = 0; $i < strlen($opcionc); $i++) {
     $opcion = $opcionc[$i];
-    $contadocr = 0;
+    $contadorc = 0;
    //con este for contamos las respuestas "$seleccionadas"
     for ($x = 0; $x < strlen($seleccionadas); $x++) {
         $actual = $seleccionadas[$x];
         if ($actual === $opcion) {
-            $contadocr++;
+            $contadorc++;
         }
     }
 }
@@ -66,21 +66,37 @@ for ($i = 0; $i < strlen($opciond); $i++) {
     }
 }
 
-if ($contadora >= 5) {
+if ($contadora>$contadorb && $contadora>$contadorc && $contadora>$contadord) { //a es mayor
     echo "Eres un taco al pastor";
-} elseif ($contadorb >= 5) {
+} elseif ($contadorb>$contadora && $contadorb>$contadorc && $contadorb>$contadord) { // b es mayor
     echo "Eres un taco de suadero";
 } 
-elseif ($contadocr >= 5) {
+elseif ($contadorc>$contadora && $contadorc>$contadorb && $contadorc>$contadord) { // c es mayor
     echo "Eres un taco de barbacoa";
 }
-elseif ($contadord >= 5) {
+elseif ($contadord>$contadora && $contadord>$contadorb && $contadord>$contadorc) { //d es mayor
     echo "Eres un taco lagunero";
-}
-elseif ($contadora = $contadorb) {
+} 
+//las mezclas
+elseif ($contadora=$contadorb && $contadora>$contadorc && $contadora>$contadord) { //a y b son los mayores
     echo "Eres un taco campechano";
 }
+elseif ($contadorb=$contadorc && $contadorb>$contadora && $contadorb>$contadord) { //b y c son los mayores
+    echo "Eres un taco de carnitas";
+}
+elseif ($contadorc=$contadord && $contadorc>$contadora && $contadorc>$contadorb) { //c y d son los mayores
+    echo "Eres un taco Bell, Que asco!!";
+}
+elseif ($contadora=$contadord && $contadora>$contadorb && $contadora>$contadorc) { //a y d son los mayores
+    echo "Eres un taco light";
+}
+elseif ($contadora=$contadorc && $contadora>$contadorb && $contadora>$contadord) { //a y c son los mayores
+    echo "Eres un taco placero";
+}
+elseif ($contadorb=$contadord && $contadorb>$contadora && $contadorb>$contadorc) { //b y d son los mayores
+    echo "Eres un taco de mixiote";
+}
 else {
-    echo "Eres un taco de sal";
+    echo "Eres un taco de sal"; //sal xd
 }  
 ?>
