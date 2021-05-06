@@ -78,22 +78,22 @@ elseif ($contadord>$contadora && $contadord>$contadorb && $contadord>$contadorc)
     echo "Eres un taco lagunero";
 } 
 //las mezclas
-elseif ($contadora=$contadorb && $contadora>$contadorc && $contadora>$contadord) { //a y b son los mayores
+elseif ($contadora==$contadorb && $contadora>$contadorc && $contadora>$contadord) { //a y b son los mayores
     echo "Eres un taco campechano";
 }
-elseif ($contadorb=$contadorc && $contadorb>$contadora && $contadorb>$contadord) { //b y c son los mayores
+elseif ($contadorb==$contadorc && $contadorb>$contadora && $contadorb>$contadord) { //b y c son los mayores
     echo "Eres un taco de carnitas";
 }
-elseif ($contadorc=$contadord && $contadorc>$contadora && $contadorc>$contadorb) { //c y d son los mayores
+elseif ($contadorc==$contadord && $contadorc>$contadora && $contadorc>$contadorb) { //c y d son los mayores
     echo "Eres un taco Bell, Que asco!!";
 }
-elseif ($contadora=$contadord && $contadora>$contadorb && $contadora>$contadorc) { //a y d son los mayores
+elseif ($contadora==$contadord && $contadora>$contadorb && $contadora>$contadorc) { //a y d son los mayores
     echo "Eres un taco light";
 }
-elseif ($contadora=$contadorc && $contadora>$contadorb && $contadora>$contadord) { //a y c son los mayores
+elseif ($contadora==$contadorc && $contadora>$contadorb && $contadora>$contadord) { //a y c son los mayores
     echo "Eres un taco placero";
 }
-elseif ($contadorb=$contadord && $contadorb>$contadora && $contadorb>$contadorc) { //b y d son los mayores
+elseif ($contadorb==$contadord && $contadorb>$contadora && $contadorb>$contadorc) { //b y d son los mayores
     echo "Eres un taco de mixiote";
 }
 else {
