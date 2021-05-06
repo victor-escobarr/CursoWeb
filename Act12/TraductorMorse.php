@@ -229,9 +229,15 @@ else{     //morse a español
     "-.-.--" => ",",
     ".-..-." => '"',
   ];
-  echo "Aun no se como NO desplegar todo, pero lo voy a seguir intentando :c" ."<br><br>";
+  $textitoo = $_POST["texto"];
+  
    foreach($morse as $morsee => $esp){
-      echo $morsee ."  es igual: " .$esp ."<br>";
+  
+    if($textitoo == $morsee)
+        {
+           echo $esp;
+        }
    }
+   echo "<br><br>No se porque ahorita solo sirve con un solo caracter :c";
   }
 ?>
