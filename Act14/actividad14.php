@@ -1,4 +1,5 @@
 <?php
+$horacdmx = $_POST["hora"];
 if(isset($_POST["enviar"])) //si envian el primer formulario
 {
     echo "<table border=1;>"; //tablita
@@ -11,7 +12,7 @@ if(isset($_POST["enviar"])) //si envian el primer formulario
       echo "<td>$_POST[hora]</td>"; //hora cdmx
     if(isset($_POST["ny"])) //Si seleccionan NewYork
     {  
-        $mifecha = new DateTime(); 
+        $mifecha = new DateTime($horacdmx); 
         $mifecha->modify('+1 hours'); 
          $newyork = $mifecha->format('H:i');
     
@@ -22,7 +23,7 @@ if(isset($_POST["enviar"])) //si envian el primer formulario
     } 
     if(isset($_POST["sp"])) //Si seleccionan SaoPaolo
     {
-        $mifecha = new DateTime(); 
+        $mifecha = new DateTime($horacdmx);
         $mifecha->modify('+2 hours'); 
          $saopaolo = $mifecha->format('H:i');
 
@@ -33,7 +34,7 @@ if(isset($_POST["enviar"])) //si envian el primer formulario
     } 
     if(isset($_POST["md"])) //Si seleccionan Madrid
     {
-        $mifecha = new DateTime(); 
+        $mifecha = new DateTime($horacdmx); 
         $mifecha->modify('+7 hours'); 
          $madrid = $mifecha->format('H:i');
 
@@ -44,7 +45,7 @@ if(isset($_POST["enviar"])) //si envian el primer formulario
     }
     if(isset($_POST["pr"])) //Si seleccionan Paris
     {
-        $mifecha = new DateTime(); 
+        $mifecha = new DateTime($horacdmx); 
         $mifecha->modify('+7 hours'); 
          $paris = $mifecha->format('H:i');
 
@@ -55,7 +56,7 @@ if(isset($_POST["enviar"])) //si envian el primer formulario
     }
     if(isset($_POST["rm"])) //Si seleccionan Roma
     {
-        $mifecha = new DateTime(); 
+        $mifecha = new DateTime($horacdmx); 
         $mifecha->modify('+7 hours'); 
          $roma = $mifecha->format('H:i');
 
@@ -66,7 +67,7 @@ if(isset($_POST["enviar"])) //si envian el primer formulario
     }
     if(isset($_POST["at"])) //Si seleccionan Atenas
     {
-        $mifecha = new DateTime(); 
+        $mifecha = new DateTime($horacdmx); 
         $mifecha->modify('+8 hours'); 
          $atenas = $mifecha->format('H:i');
         
@@ -78,7 +79,7 @@ if(isset($_POST["enviar"])) //si envian el primer formulario
     }
     if(isset($_POST["bj"]))  //Si seleccionan Bejin
     {
-        $mifecha = new DateTime(); 
+        $mifecha = new DateTime($horacdmx); 
         $mifecha->modify('+13 hours'); 
          $bejin = $mifecha->format('H:i');
         
@@ -90,7 +91,7 @@ if(isset($_POST["enviar"])) //si envian el primer formulario
     }
     if(isset($_POST["tk"])) //Si seleccionan Tokio
     {
-        $mifecha = new DateTime(); 
+        $mifecha = new DateTime($horacdmx); 
         $mifecha->modify('+14 hours'); 
          $tokio = $mifecha->format('H:i');
 
@@ -101,7 +102,6 @@ if(isset($_POST["enviar"])) //si envian el primer formulario
     }
         echo "</table>";  
         echo "<br><br>";
-        echo "<p>ahorita solo sirve con la hora actual;c</p>";
 }
 
 
