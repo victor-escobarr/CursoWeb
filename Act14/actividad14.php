@@ -1,7 +1,7 @@
 <?php
-$horacdmx = $_POST["hora"];
 if(isset($_POST["enviar"])) //si envian el primer formulario
 {
+    $horacdmx = $_POST["hora"];
     echo "<table border=1;>"; //tablita
     echo "<thead>";
             //titulo de la tabla
@@ -108,9 +108,12 @@ if(isset($_POST["enviar"])) //si envian el primer formulario
 
 if(isset($_POST["enviar2"])) //Si envian la segunda tabla
 {
-  
-
-
+    $cumple = $_POST["cumple"]; //asi más facil xd
+    $hoy = date("y-m-d");  //para poner la fecha año-mes-dia como el form
+    $fechadehoy= new DateTime($hoy); //la fecha de hoy
+    $fechadelcumple= new DateTime($cumple); //fecha del cumple
+    $diff = $fechadehoy->diff($fechadelcumple); //diferencia de dias entre el dia que lo checan y el dia del cumple
+    $dias = $diff->days; //para ocuparlo mas fácil en horas y min
     echo "<table border=1;>"; //tablita
     echo "<thead>";
     //titulo de la tabla
@@ -122,23 +125,23 @@ if(isset($_POST["enviar2"])) //Si envian la segunda tabla
     {
         echo "<tr>";
         echo "<td colspan=1;>Dias</td>"; 
-        echo "<td colspan=1;> En proceso </td>";  //Días hasta su cumple
+        echo "<td colspan=1;> $dias </td>";  //Días hasta su cumple
         echo "</tr>";
     } 
     if(isset($_POST["horas"])) //Si seleccionan horas
     {
-        //echo $_POST["sp"];
+        $horas = $dias*24; //multiplicamos los dias que faltan por 24 (horas)
         echo "<tr>";
         echo "<td colspan=1;>Horas</td>"; 
-        echo "<td colspan=1;> En proceso  </td>";  //horas hasta su cumple
+        echo "<td colspan=1;>  $horas </td>";  //horas hasta su cumple
         echo "</tr>";
     } 
     if(isset($_POST["min"])) //Si seleccionan minutos
     {
-        //echo $_POST["md"];
+        $min = $dias*1440; //multiplicamos los dias que faltan por 1440 (minutos que tiene un dia)
         echo "<tr>";
         echo "<td colspan=1;>Minutos</td>";
-        echo "<td colspan=1;> En proceso  </td>"; //minutos hasta su cumple
+        echo "<td colspan=1;> $min </td>"; //minutos hasta su cumple
         echo "</tr>";
     }
     if(isset($_POST["fin"])) //Si seleccionan fin de semana
@@ -150,8 +153,7 @@ if(isset($_POST["enviar2"])) //Si envian la segunda tabla
        echo "</tr>";
     }
     echo "</table>"; 
-    echo "<br><br>";
-    echo "<p>Este no puede hacer casi nada :c</p>";
+    echo "<br><br>"; //La inspiracion me llego en la madrugada mientras hacia otro codigo :c
 }
 
 ?>
